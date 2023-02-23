@@ -1,4 +1,5 @@
 import css from './ContactForm.module.css'
+import PropTypes from 'prop-types';
 
 export const ContactList = ({ stateContact, onDeleteContact }) => (
     <ul className={css.listUl}>
@@ -15,3 +16,7 @@ export const ContactList = ({ stateContact, onDeleteContact }) => (
             </ul>
 );
  
+ContactList.propTypes = {
+    stateContact: PropTypes.array.isRequired, 
+    onDeleteContact: PropTypes.func.isRequired, 
+}

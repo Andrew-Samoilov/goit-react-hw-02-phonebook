@@ -1,4 +1,5 @@
 import css from './ContactForm.module.css'
+import PropTypes from 'prop-types';
 import React from "react";
 
 class ContactForm extends React.Component {
@@ -51,3 +52,10 @@ class ContactForm extends React.Component {
 }
 
 export default ContactForm;
+
+ContactForm.propTypes = {
+    state: PropTypes.exact({
+            name: PropTypes.string.isRequired,
+            number: PropTypes.string.isRequired,
+        }), 
+    }
