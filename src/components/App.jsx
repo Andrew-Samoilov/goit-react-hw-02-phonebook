@@ -39,9 +39,13 @@ class App extends React.Component {
       number: data.number,
     }
 
-    this.setState(({ contacts }) => ({
-      contacts: [newData, ...contacts],
-    }));
+    if (this.state.contacts.filter(contact => contact.name === data.name).length>0) {
+      alert(`${data.name} is alredy in contacts.`);
+    } else {
+      this.setState(({ contacts }) => ({
+        contacts: [newData, ...contacts],
+      }));
+    }
   };
   
   deleteContact = (contactId) => {
@@ -51,7 +55,7 @@ class App extends React.Component {
   };
 
   render() {  
-    let visibleContacts = this.getVisibleContacts();
+    const visibleContacts = this.getVisibleContacts();
 
     return (
       <div className={css.mainDiv}>
