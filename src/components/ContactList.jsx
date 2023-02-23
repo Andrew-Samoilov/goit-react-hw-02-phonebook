@@ -9,4 +9,5 @@ export const ContactList = ({ stateContact }) => (
                     </li>
                 )}
             </ul>
-        );
+);
+ 
