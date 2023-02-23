@@ -1,0 +1,35 @@
+.contactForm{
+    background-color: azure;
+    border: 1px solid lightblue;
+    border-radius: 0.25em;
+    padding: 1em;   
+}
+.contactLabel{
+    padding-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.25em;
+}
+.inputField{
+    margin-top: 1em;
+    border: 2px solid lightblue;
+    border-radius: 0.25em;
+}
+.inputField:focus{
+    border: 2px solid tomato;
+    border-radius: 0.25em;
+    outline: none;
+}
+
+.mainDiv{
+    background-color:ghostwhite;
+    border: 1px solid lightblue;
+    border-radius: 0.25em;
+    margin: 1em;
+    padding: 1em;
+    max-width: max-content;
+}
+.button{
+    border: 1px solid lightblue;
+    border-radius: 0.25em;
+}
