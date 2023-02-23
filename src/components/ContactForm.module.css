@@ -28,8 +28,18 @@
     margin: 1em;
     padding: 1em;
     max-width: max-content;
+    min-width: 300px;
 }
+
 .button{
     border: 1px solid lightblue;
     border-radius: 0.25em;
+}
+
+.listUl{
+    padding: 0;
+}
+.listItem {
+    display: flex;
+    justify-content: space-between;
 }

@@ -23,6 +23,15 @@ class App extends React.Component {
     this.setState({ filter: e.currentTarget.value });
   }
 
+  getVisibleContacts = () => {
+    const { filter, contacts } = this.state;
+    
+    const normalizedFilter = filter.toLowerCase();
+
+    return contacts.filter(
+      contact => contact.name.toLowerCase().includes(normalizedFilter));
+  }
+
   formSubmitHandler = data => {
     const newData = {
       id: nanoid(4),
@@ -34,20 +43,23 @@ class App extends React.Component {
       contacts: [newData, ...contacts],
     }));
   };
+  
+  deleteContact = (contactId) => {
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(contact => contact.id !== contactId),
+    }))
+  };
 
-  render() {
-    const normalizedFilter = this.state.filter.toLowerCase();
+  render() {  
+    let visibleContacts = this.getVisibleContacts();
 
-    const visibleContacts = this.state.contacts.filter(
-      contact => contact.name.toLowerCase().includes(normalizedFilter));
-    
     return (
       <div className={css.mainDiv}>
         <h1>Phonebook</h1>
         <ContactForm onSubmit={this.formSubmitHandler} />
         <h2>Contacts</h2>
         <Filter value={this.state.filter} onChange={this.changeFilter} />
-        <ContactList stateContact={visibleContacts} />
+        <ContactList stateContact={visibleContacts} onDeleteContact={this.deleteContact} />
       </div>);
   }
 }

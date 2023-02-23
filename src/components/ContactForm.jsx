@@ -3,7 +3,6 @@ import React from "react";
 
 class ContactForm extends React.Component {
     state = {
-        id: '',
         name: '',
         number: '',
     }
