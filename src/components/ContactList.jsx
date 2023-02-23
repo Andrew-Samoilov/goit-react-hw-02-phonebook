@@ -1,4 +1,3 @@
-// import React from "react";
 import css from './ContactForm.module.css'
 
 export const ContactList = ({ stateContact }) => (

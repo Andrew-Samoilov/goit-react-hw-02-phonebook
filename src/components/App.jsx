@@ -1,7 +1,8 @@
 import React from "react";
 import { nanoid } from 'https://cdn.jsdelivr.net/npm/nanoid/nanoid.js'
-import ContactForm from "./ContactForm";
 import { ContactList } from "./ContactList";
+import ContactForm from "./ContactForm";
+
 import Filter from "./Filter";
 import css from './ContactForm.module.css'
 
