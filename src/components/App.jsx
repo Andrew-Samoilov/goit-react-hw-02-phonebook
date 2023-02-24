@@ -1,5 +1,5 @@
 import React from "react";
-import {nanoid} from 'nanoid'
+import { nanoid } from 'nanoid'
 import { ContactList } from "./ContactList";
 import ContactForm from "./ContactForm";
 
@@ -25,7 +25,7 @@ class App extends React.Component {
 
   getVisibleContacts = () => {
     const { filter, contacts } = this.state;
-    
+
     const normalizedFilter = filter.toLowerCase();
 
     return contacts.filter(
@@ -39,7 +39,7 @@ class App extends React.Component {
       number: data.number,
     }
 
-    if (this.state.contacts.filter(contact => contact.name === data.name).length>0) {
+    if (this.state.contacts.filter(contact => contact.name === data.name).length > 0) {
       alert(`${data.name} is alredy in contacts.`);
     } else {
       this.setState(({ contacts }) => ({
@@ -47,14 +47,14 @@ class App extends React.Component {
       }));
     }
   };
-  
+
   deleteContact = (contactId) => {
     this.setState(prevState => ({
       contacts: prevState.contacts.filter(contact => contact.id !== contactId),
     }))
   };
 
-  render() {  
+  render() {
     const visibleContacts = this.getVisibleContacts();
 
     return (
